@@ -1,0 +1,75 @@
+{
+  "projectPlan": "string",
+  "projectOverview": "string",
+  "workstreams": [
+    {
+      "title": "string",
+      "estimatedDuration": "number",
+      "activities": [],
+      "deliverables": [
+        {
+          "title": "string",
+          "format": "string"
+        }
+      ]
+    }
+  ],
+  "keyMilestones": [
+    {
+      "title": "string",
+      "dayOfCompletion": "number"
+    }
+  ],
+  "projectTimeline": [
+    {
+      "from": "number",
+      "to": "number",
+      "event": "string"
+    }
+  ],
+  "resourceModel": [
+    {
+      "accountLeader": {
+        "resource": "string",
+        "quantity": "number",
+        "rate": "number",
+        "workingDays": "number"
+      },
+      "engagementLeader": {
+        "resource": "string",
+        "quantity": "number",
+        "rate": "number",
+        "workingDays": "number"
+      },
+      "engagementManager": {
+        "resource": "string",
+        "quantity": "number",
+        "rate": "number",
+        "workingDays": "number"
+      },
+      "workstreamLeads": [
+        {
+          "workstreamLeader": {
+            "resource": "string",
+            "quantity": "number",
+            "rate": "number",
+            "workingDays": "number"
+          }
+        }
+      ],
+      "analysts": {
+        "quantity": "number",
+        "rate": "number",
+        "totalWorkingDays": "number"
+      }
+    }
+  ],
+  "caseStudies": [
+    {
+      "industry": "string",
+      "title": "string",
+      "company": "string",
+      "relevanceToProject": "string"
+    }
+  ]
+}
