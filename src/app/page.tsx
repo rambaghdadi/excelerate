@@ -1,23 +1,44 @@
 "use client"
-import {ProjectScope} from "@/utils/types"
-import {useEffect, useState} from "react"
+import FormContainer from "@/components/molecules/FormContainer/FormContainer"
+import {IPromptArgs, ProjectScope} from "@/utils/types"
+import {useState} from "react"
 
 export default function Home() {
+  const [results, setResults] = useState<ProjectScope | null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  async function getScope() {
-    setIsLoading(true)
-    const response = await fetch(`http://localhost:3000/api/prompt`)
-    const data = await response.json()
-    const formattedData = JSON.parse(data.data) as ProjectScope
-    setIsLoading(false)
+  const [error, setError] = useState("")
+
+  async function getResults(
+    formData: Omit<IPromptArgs, "currency" | "employees">
+  ) {
+    try {
+      setIsLoading(true)
+      const response = await fetch(`/api/prompt`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formData,
+        }),
+      })
+      if (!response.ok)
+        throw new Error("Something has happened. Please try again later.")
+      const data = await response.json()
+      const projectScope = JSON.parse(data.data) as ProjectScope
+      setResults(projectScope)
+      console.log(projectScope)
+    } catch (error) {
+      const err = error as Error
+      setError(err.message)
+    }
   }
 
-  useEffect(() => {
-    // getScope()
-  }, [])
+  if (isLoading) return <p>Loading...</p>
+
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <FormContainer disabled={isLoading} getResults={getResults} />
+    </>
   )
 }

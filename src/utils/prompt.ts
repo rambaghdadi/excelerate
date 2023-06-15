@@ -23,7 +23,7 @@ export function prompt({
     
     The following employees and their rates exist, in order of seniority: 
     ${employees.map(
-      (employee, i) => `${i + 1} ${employee.title}: ${employee.rate} per day\n`
+      (employee, i) => `${i + 1} ${employee.title}: ${employee.rate} per day \n`
     )}
         
     At the bare minimum, each resource model should include the following roles, which should be assigned to the above mentioned employees:

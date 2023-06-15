@@ -1,4 +1,8 @@
 import "../styles/globals.css"
+import StyledComponentsRegistry from "@/lib/styledRegistry"
+import Header from "@/components/molecules/Header/Header"
+import {poppins} from "@/fonts/fonts"
+import Footer from "@/components/molecules/Footer/Footer"
 
 export const metadata = {
   title: "Create Next App",
@@ -8,7 +12,13 @@ export const metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={poppins.variable}>
+        <StyledComponentsRegistry>
+          <Header />
+          {children}
+          <Footer />
+        </StyledComponentsRegistry>
+      </body>
     </html>
   )
 }
