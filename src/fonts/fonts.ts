@@ -1,6 +1,6 @@
-import {Poppins} from "next/font/google"
+import {Urbanist} from "next/font/google"
 
-export const poppins = Poppins({
+export const urbanist = Urbanist({
   weight: ["400", "500", "700"],
   display: "swap",
   subsets: ["latin"],

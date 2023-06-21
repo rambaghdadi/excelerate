@@ -1,5 +1,6 @@
 import {NextResponse} from "next/server"
-import {Configuration, OpenAIApi} from "openai"
+import {Configuration, OpenAIApi, ResponseTypes} from "openai-edge"
+import {OpenAIStream, StreamingTextResponse} from "ai"
 import {prompt} from "@/utils/prompt"
 import {IPromptArgs} from "@/utils/types"
 
@@ -11,7 +12,7 @@ export async function POST(req: Request) {
     brief: formData.brief,
     goal: formData.goal,
     budget: formData.budget,
-    currency: "USD",
+    currency: formData.currency,
     deadline: formData.deadline,
     employees: [
       {title: "Partner", rate: 100},
@@ -25,22 +26,32 @@ export async function POST(req: Request) {
     sector: formData.sector,
   })
 
-  const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-  })
+  try {
+    const configuration = new Configuration({
+      apiKey: process.env.OPENAI_API_KEY,
+    })
 
-  const openai = new OpenAIApi(configuration)
-  const res = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: [
-      {
-        role: "user",
-        content: userPrompt,
-      },
-    ],
-    temperature: 0,
-  })
-  const data = res.data.choices[0].message?.content
+    const openai = new OpenAIApi(configuration)
+    const res = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo-16k",
+      // stream: true,
+      messages: [
+        {
+          role: "user",
+          content: userPrompt,
+        },
+      ],
+      temperature: 0,
+    })
 
-  return NextResponse.json({data}, {status: 200})
+    const data = (await res.json()) as ResponseTypes["createChatCompletion"]
+    const JSONResponse = data.choices[0]?.message?.content
+    return NextResponse.json({data: JSONResponse}, {status: 200})
+
+    // const stream = OpenAIStream(res)
+    // return new StreamingTextResponse(stream, {status: 200})
+  } catch (err) {
+    const e = err as Error
+    return NextResponse.json({message: e.message}, {status: 400})
+  }
 }
