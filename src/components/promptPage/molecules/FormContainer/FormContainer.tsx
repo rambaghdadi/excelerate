@@ -1,14 +1,9 @@
+import classes from "./FormContainer.module.css"
 import Button from "@/components/general/atoms/Button/Button"
-import FormStepOne from "@/components/promptPage/organisms/FormStepOne/FormStepOne"
-import FormStepTwo from "@/components/promptPage/organisms/FormStepTwo/FormStepTwo"
+import FormStepOne from "@/components/promptPage/organisms/FormSteps/FormStepOne"
+import FormStepTwo from "@/components/promptPage/organisms/FormSteps/FormStepTwo"
 import type {IPromptArgs} from "@/utils/types"
 import {FormEvent, useState} from "react"
-import {
-  StyledErrorMessage,
-  StyledFormActions,
-  StyledFormContainer,
-  StyledStepInfo,
-} from "./FormContainer.styles"
 import {validateForm} from "@/utils/promptFormValidation"
 
 interface IFormContainerProps {
@@ -99,14 +94,14 @@ export default function FormContainer({
   }
 
   return (
-    <StyledFormContainer onSubmit={submit}>
+    <form className={classes.form} onSubmit={submit}>
       <p>Assessor</p>
-      <StyledStepInfo>
+      <div className={classes.stepInfo}>
         <span>Step {step + 1}: </span>
         {formSteps[step].heading}
-      </StyledStepInfo>
+      </div>
       {formSteps[step].form}
-      <StyledFormActions>
+      <div className={classes.formActions}>
         {step > 0 && (
           <Button type="button" {...{disabled}} onClick={previousForm}>
             Previous
@@ -121,8 +116,8 @@ export default function FormContainer({
             Next
           </Button>
         )}
-      </StyledFormActions>
-      {formError && <StyledErrorMessage>Error: {formError}</StyledErrorMessage>}
-    </StyledFormContainer>
+      </div>
+      {formError && <p className={classes.errorMessage}>Error: {formError}</p>}
+    </form>
   )
 }

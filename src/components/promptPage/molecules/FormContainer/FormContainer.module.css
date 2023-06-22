@@ -1,0 +1,34 @@
+.form {
+  color: white;
+  margin: 0 5rem;
+  max-width: 25rem;
+}
+
+.form p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.formActions {
+  margin-top: 1.5rem;
+
+  display: flex;
+  gap: 1rem;
+}
+
+.stepInfo {
+  font-size: 0.9rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.stepInfo span {
+  font-weight: 600;
+}
+
+.errorMessage {
+  font-size: 16px !important;
+  color: red;
+  margin-top: 1rem;
+}

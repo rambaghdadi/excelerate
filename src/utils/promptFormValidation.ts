@@ -1,4 +1,4 @@
-import {IFormStepOneProps} from "@/components/promptPage/organisms/FormStepOne/FormStepOne"
+import {IFormStepOneProps} from "@/components/promptPage/organisms/FormSteps/FormStepOne"
 
 export function validateForm(formInputs: IFormStepOneProps) {
   for (let key in formInputs) {
@@ -6,10 +6,10 @@ export function validateForm(formInputs: IFormStepOneProps) {
     if (!formInputs[key]) throw new Error(`One or more fields are empty.`)
   }
 
-  if (typeof formInputs.budgetValue !== "number")
+  if (typeof Number(formInputs.budgetValue) !== "number")
     throw new Error("Budget needs to be a number.")
 
-  if (formInputs.budgetValue < 1000)
+  if (Number(formInputs.budgetValue) < 1000)
     throw new Error("Budget needs to be more than 1000.")
 
   if (

@@ -1,13 +1,7 @@
-import {styled} from "styled-components"
-
-const StyledTextArea = styled.textarea`
-  padding: 0.5rem;
-  min-height: 10rem;
-  border-radius: 7px;
-`
+import classes from "./TextArea.module.css"
 
 interface IInputElementProps extends React.HTMLProps<HTMLTextAreaElement> {}
 
 export default function TextArea({...props}: IInputElementProps) {
-  return <StyledTextArea {...props} />
+  return <textarea className={classes.textarea} {...props} />
 }

@@ -1,0 +1,113 @@
+{
+  "projectPlan": "The project plan for introducing sustainable packaging material for walkers crisps in the Food & Beverages industry is as follows:",
+  "projectOverview": "The goal of this project is to increase customers and sales by implementing sustainable packaging material for walkers crisps. The project will start on 2023-06-22 and end on 2025-08-29. The budget for this project is $100,000 USD.",
+  "workstreams": [
+    {
+      "title": "Research and Analysis",
+      "estimatedDuration": 30,
+      "activities": [
+        "Conduct market research on sustainable packaging materials",
+        "Analyze the current packaging materials used by walkers crisps",
+        "Identify potential sustainable packaging materials for walkers crisps"
+      ],
+      "deliverables": [
+        {"title": "Market Research Report", "format": "PowerPoint"},
+        {"title": "Analysis of Current Packaging Materials", "format": "Excel"},
+        {
+          "title": "Recommendation for Sustainable Packaging Material",
+          "format": "Presentation"
+        }
+      ]
+    },
+    {
+      "title": "Supplier Evaluation and Selection",
+      "estimatedDuration": 20,
+      "activities": [
+        "Identify potential suppliers of sustainable packaging materials",
+        "Evaluate and compare suppliers based on criteria such as cost, quality, and sustainability",
+        "Select the most suitable supplier for walkers crisps"
+      ],
+      "deliverables": [
+        {"title": "List of Potential Suppliers", "format": "Excel"},
+        {"title": "Supplier Evaluation Report", "format": "PowerPoint"},
+        {"title": "Selected Supplier Recommendation", "format": "Presentation"}
+      ]
+    },
+    {
+      "title": "Implementation Plan",
+      "estimatedDuration": 40,
+      "activities": [
+        "Develop a detailed plan for implementing the new sustainable packaging material",
+        "Define the timeline and milestones for the implementation",
+        "Identify potential risks and mitigation strategies"
+      ],
+      "deliverables": [
+        {"title": "Implementation Plan", "format": "PowerPoint"},
+        {"title": "Timeline and Milestones", "format": "Excel"},
+        {
+          "title": "Risk Assessment and Mitigation Plan",
+          "format": "Presentation"
+        }
+      ]
+    }
+  ],
+  "keyMilestones": [
+    {"title": "Market Research Completed", "dayOfCompletion": 60},
+    {"title": "Supplier Selected", "dayOfCompletion": 100},
+    {"title": "Implementation Plan Finalized", "dayOfCompletion": 140},
+    {"title": "New Packaging Material Implemented", "dayOfCompletion": 300}
+  ],
+  "projectTimeline": [
+    {"from": 0, "to": 30, "event": "Research and Analysis"},
+    {"from": 30, "to": 50, "event": "Supplier Evaluation and Selection"},
+    {"from": 50, "to": 90, "event": "Implementation Plan"},
+    {"from": 90, "to": 300, "event": "New Packaging Material Implementation"}
+  ],
+  "resourceModel": [
+    {
+      "accountLeader": {
+        "resource": "Partner",
+        "quantity": 1,
+        "rate": 100,
+        "workingDays": 30
+      },
+      "engagementLeader": {
+        "resource": "Director",
+        "quantity": 1,
+        "rate": 80,
+        "workingDays": 30
+      },
+      "engagementManager": {
+        "resource": "Senior Manager",
+        "quantity": 1,
+        "rate": 50,
+        "workingDays": 30
+      },
+      "workstreamLeads": [
+        {
+          "workstreamLeader": {
+            "resource": "Manager",
+            "quantity": 1,
+            "rate": 30,
+            "workingDays": 30
+          }
+        }
+      ],
+      "analysts": {"quantity": 2, "rate": 10, "totalWorkingDays": 30}
+    }
+  ],
+  "caseStudies": [
+    {
+      "industry": "Food & Beverages",
+      "title": "Sustainable Packaging Implementation in Snack Industry",
+      "company": "XYZ Snacks",
+      "relevanceToProject": "This case study provides insights into the successful implementation of sustainable packaging materials in the snack industry, which can be applied to the walkers crisps project."
+    },
+    {
+      "industry": "Food & Beverages",
+      "title": "Consumer Response to Sustainable Packaging",
+      "company": "ABC Beverages",
+      "relevanceToProject": "This case study explores the impact of sustainable packaging on consumer perception and purchasing behavior, which is relevant to the goal of increasing customers and sales for walkers crisps."
+    }
+  ]
+}

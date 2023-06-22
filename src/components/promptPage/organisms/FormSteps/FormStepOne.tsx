@@ -1,23 +1,10 @@
+import classes from "./FormSteps.module.css"
 import SelectInput from "@/components/general/atoms/SelectInput/SelectInput"
 import TextInput from "@/components/general/atoms/TextInput/TextInput"
 import FormQuestion from "@/components/general/molecules/FormQuestion/FormQuestion"
 import {currencies} from "@/lib/currencies"
 import {industries} from "@/lib/industries"
 import {sectors} from "@/lib/sectors"
-import {styled} from "styled-components"
-
-const StyledFormStepOne = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-
-  & > .step {
-    margin-top: 1rem;
-    margin-bottom: 1.5;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-`
 
 export interface IFormStepOneProps {
   industryValue: string
@@ -39,7 +26,7 @@ export default function FormStepOne({
   onChange,
 }: IFormStepOneProps) {
   return (
-    <StyledFormStepOne>
+    <div className={classes.container}>
       <FormQuestion
         htmlFor="industryValue"
         label="What industry will this project operate in?"
@@ -117,6 +104,6 @@ export default function FormStepOne({
           type="date"
         />
       </FormQuestion>
-    </StyledFormStepOne>
+    </div>
   )
 }

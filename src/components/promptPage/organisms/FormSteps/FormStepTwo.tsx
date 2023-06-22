@@ -1,19 +1,6 @@
+import classes from "./FormSteps.module.css"
 import TextArea from "@/components/general/atoms/TextArea/TextArea"
 import FormQuestion from "@/components/general/molecules/FormQuestion/FormQuestion"
-import {styled} from "styled-components"
-
-const StyledFormStepTwo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-
-  & > .step {
-    margin-top: 1rem;
-    margin-bottom: 1.5;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-`
 
 interface IFormStepTwoProps {
   primaryDeliverableValue: string
@@ -27,7 +14,7 @@ export default function FormStepTwo({
   onChange,
 }: IFormStepTwoProps) {
   return (
-    <StyledFormStepTwo>
+    <div className={classes.container}>
       <FormQuestion
         htmlFor="primaryDeliverableValue"
         label="What is the primary deliverable of this project?"
@@ -49,6 +36,6 @@ export default function FormStepTwo({
           onChange={onChange}
         />
       </FormQuestion>
-    </StyledFormStepTwo>
+    </div>
   )
 }

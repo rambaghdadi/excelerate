@@ -1,9 +1,4 @@
-import {styled} from "styled-components"
-
-const StyledSelectInput = styled.select`
-  padding: 0.5rem;
-  border-radius: 7px;
-`
+import classes from "./SelectInput.module.css"
 
 interface ISelectInputProps extends React.HTMLProps<HTMLSelectElement> {
   options: string[]
@@ -11,10 +6,10 @@ interface ISelectInputProps extends React.HTMLProps<HTMLSelectElement> {
 
 export default function SelectInput({options, ...props}: ISelectInputProps) {
   return (
-    <StyledSelectInput {...props}>
+    <select className={classes.select} {...props}>
       {options.map((option) => (
         <option key={option}>{option}</option>
       ))}
-    </StyledSelectInput>
+    </select>
   )
 }

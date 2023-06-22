@@ -1,10 +1,5 @@
 import Link from "next/link"
-import {styled} from "styled-components"
-
-const StyledList = styled.ul`
-  display: flex;
-  gap: 1rem;
-`
+import classes from "./Navbar.module.css"
 
 export default function Navbar() {
   const links = [
@@ -20,13 +15,13 @@ export default function Navbar() {
 
   return (
     <nav>
-      <StyledList>
+      <ul className={classes.linkList}>
         {links.map(({name, url}) => (
           <Link style={linkStyles} key={url} href={"/" + url}>
             {name}
           </Link>
         ))}
-      </StyledList>
+      </ul>
     </nav>
   )
 }

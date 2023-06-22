@@ -1,12 +1,7 @@
-import {styled} from "styled-components"
-
-const StyledTextInput = styled.input`
-  padding: 0.5rem;
-  border-radius: 7px;
-`
+import classes from "./TextInput.module.css"
 
 interface IInputElementProps extends React.HTMLProps<HTMLInputElement> {}
 
 export default function TextInput({...props}: IInputElementProps) {
-  return <StyledTextInput {...props} />
+  return <input className={classes.input} {...props} />
 }

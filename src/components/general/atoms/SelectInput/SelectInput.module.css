@@ -1,0 +1,12 @@
+.select {
+  padding: 0.5rem;
+  border-radius: 7px;
+
+  background: url("/images/icons/chevronDown.png") no-repeat right;
+  background-color: white;
+  /* Adjust these values based on the size of your icon */
+  background-size: 20px;
+  background-position: 95% center;
+  /* Add some padding so the text isn't on top of the icon */
+  padding-right: 25px;
+}

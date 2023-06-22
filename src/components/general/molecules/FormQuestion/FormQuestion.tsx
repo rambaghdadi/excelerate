@@ -1,15 +1,4 @@
-import {styled} from "styled-components"
-
-const StyledQuestion = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-
-  & > label {
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-`
+import classes from "./FormQuestion.module.css"
 
 interface IFormQuestionProps {
   htmlFor: string
@@ -23,9 +12,9 @@ export default function FormQuestion({
   htmlFor,
 }: IFormQuestionProps) {
   return (
-    <StyledQuestion>
+    <div className={classes.main}>
       <label htmlFor={htmlFor}>{label}</label>
       {children}
-    </StyledQuestion>
+    </div>
   )
 }
