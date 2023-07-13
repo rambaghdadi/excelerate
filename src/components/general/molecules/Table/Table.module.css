@@ -1,0 +1,36 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 7px;
+  background-color: rgb(27, 92, 204);
+  overflow: hidden;
+}
+
+.table thead {
+  text-align: left;
+  background-color: rgb(193, 193, 255);
+  color: #333;
+}
+
+.table thead tr th {
+  padding: 1rem;
+  white-space: nowrap;
+}
+.table thead tr th:nth-child(1) {
+  width: 100%;
+}
+.table thead tr th:not(:nth-child(1)) {
+  min-width: 9rem;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: rgba(21, 62, 197, 0.625);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(0, 204, 255, 0.326);
+}
+
+.table tbody tr td {
+  padding: 1rem;
+}

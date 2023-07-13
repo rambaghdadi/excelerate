@@ -1,0 +1,27 @@
+body {
+  font-family: var(--main-font);
+  color: white;
+  background: linear-gradient(#1d0034, #060016);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 1rem;
+}
+
+button {
+  font-family: var(--main-font);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  font-size: 16px;
+  font-family: var(--main-font);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  outline: none;
+  border: none;
+}

@@ -1,11 +1,12 @@
-import "../styles/globals.css"
+import "../../styles/globals.css"
+import "../../styles/main.css"
 import Header from "@/components/general/molecules/Header/Header"
 import {urbanist} from "@/fonts/fonts"
 import Footer from "@/components/general/molecules/Footer/Footer"
 import {PromptContextProvider} from "@/context/prompt-result-context"
-import ChevronDown from "../../public/images/icons/ChevronDown"
+import type {Metadata} from "next"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Excelerate",
   description: "Accelerate your growth with AI",
 }

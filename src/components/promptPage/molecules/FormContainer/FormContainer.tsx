@@ -62,7 +62,6 @@ export default function FormContainer({
   ]
 
   function nextForm(e: React.MouseEvent<HTMLButtonElement>) {
-    e.preventDefault()
     try {
       validateForm(stepOneForm as any)
       if (step === formSteps.length - 1) return
@@ -74,7 +73,6 @@ export default function FormContainer({
   }
 
   function previousForm(e: React.MouseEvent<HTMLButtonElement>) {
-    e.preventDefault()
     if (step === 0) return
     setStep((prev) => prev - 1)
   }
@@ -108,11 +106,11 @@ export default function FormContainer({
           </Button>
         )}
         {step === 1 ? (
-          <Button {...{disabled}} type="submit">
+          <Button key="1" {...{disabled}} type="submit">
             Submit
           </Button>
         ) : (
-          <Button type="button" {...{disabled}} onClick={nextForm}>
+          <Button key="2" type="button" {...{disabled}} onClick={nextForm}>
             Next
           </Button>
         )}

@@ -1,0 +1,26 @@
+.container {
+  padding: 0.2rem 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: rgba(115, 0, 255, 0.102);
+  border-radius: 7px;
+}
+
+.imageContainer {
+  border-radius: 7px;
+  background-color: #333;
+}
+
+.price {
+  background-color: #34a85334;
+  color: #34a853;
+  border-radius: 7px;
+  padding: 0.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+  text-align: center;
+}
